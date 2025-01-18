@@ -23,7 +23,7 @@ import { useWindowSize } from 'react-use';
 //     Legend,
 // } from 'chart.js';
 import { isAuthenticated } from '../utils/auth';
-import { ClimbingBoxLoader } from 'react-spinners';
+const ClimbingBoxLoader = dynamic(() => import("react-spinners").then((mod) => mod.ClimbingBoxLoader), { ssr: false });
 
 
 // ChartJS.register(ArcElement, Tooltip, Legend);
@@ -1710,32 +1710,33 @@ const Roulette = () => {
     // }, [amount]);
 
     useEffect(() => {
-        if (isAuthChecked) {
-            // Function to check if the user is on a laptop or tablet
-            const checkDevice = () => {
-                const screenWidth = window.innerWidth;
-                // You may adjust the threshold values as needed
-                if (screenWidth > 426) {
-                    setShowPrompt(true);
-                } else {
-                    setShowPrompt(false);
-                }
-            };
+        // Only run on client-side
+        if (typeof window !== 'undefined') {
+            if (isAuthChecked) {
+                // Function to check if the user is on a laptop or tablet
+                const checkDevice = () => {
+                    const screenWidth = window.innerWidth;
+                    // You may adjust the threshold values as needed
+                    if (screenWidth > 426) {
+                        setShowPrompt(true);
+                    } else {
+                        setShowPrompt(false);
+                    }
+                };
 
-            // Call the function initially
-            checkDevice();
+                // Call the function initially
+                checkDevice();
 
-            // Event listener to handle screen resize
-            window.addEventListener('resize', checkDevice);
+                // Event listener to handle screen resize
+                window.addEventListener('resize', checkDevice);
 
-            // Clean up the event listener
-            return () => {
-                window.removeEventListener('resize', checkDevice);
-            };
+                // Clean up the event listener
+                return () => {
+                    window.removeEventListener('resize', checkDevice);
+                };
+            }
         }
-
-    }, []);
-
+    }, [isAuthChecked]);
     useEffect(() => {
         if (isAuthChecked) {
             gsap.fromTo(clockRef.current, { opacity: 0 }, { opacity: 1 })

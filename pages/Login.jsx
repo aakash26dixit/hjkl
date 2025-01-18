@@ -83,7 +83,9 @@ const Login = () => {
             //         if (typeof window !== "undefined") { // Check if running on client
             //             localStorage.setItem('username', users[i].username);
             //         }
-                    router.push('/Roulette');
+            if (typeof window !== 'undefined' && typeof localStorage !== 'undefined' && typeof window !== 'undefined') {
+                router.push('/Roulette');
+            }
                     // break;
                 // } else {
                 //     // Handle invalid login if needed

@@ -13,7 +13,8 @@ const TransactionHistory = () => {
   }, []);
 
   const getRecord = async () => {
-    const data = localStorage.getItem("username") || "";
+    if (typeof window !== 'undefined' && typeof localStorage !== 'undefined' && typeof window !== 'undefined') {
+      const data = localStorage.getItem("username") || "";
 
     const q = query(usersCollectionRef, where("username", "==", data));
 
@@ -25,6 +26,8 @@ const TransactionHistory = () => {
     }
 
     setDataArray(fetchedArray);
+    }
+    
   };
 
   return (

@@ -1,5 +1,6 @@
 import {React , useState, useEffect} from 'react';
-import { ClimbingBoxLoader } from 'react-spinners';
+const ClimbingBoxLoader = dynamic(() => import("react-spinners").then((mod) => mod.ClimbingBoxLoader), { ssr: false });
+
 import '../app/globals.css'
 const Terms = () => {
 

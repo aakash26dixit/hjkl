@@ -19,7 +19,8 @@ const Profile = () => {
     }, []);
 
     const getRecord = async () => {
-        const data = localStorage.getItem('username') || '';
+        if (typeof window !== 'undefined' && typeof localStorage !== 'undefined' && typeof window !== 'undefined') {
+            const data = localStorage.getItem('username') || '';
         
         const q = query(collection(db, "roulette-users"), where("username", "==", data));
 
@@ -30,6 +31,8 @@ const Profile = () => {
             setBalance(doc.data().amount)
             setContact(doc.data().contact)
         });
+        }
+        
     }
 
     return (
