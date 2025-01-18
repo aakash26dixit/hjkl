@@ -1,0 +1,14 @@
+.container_wealth_grow{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: wheat;
+    height: 90vh;
+}
+
+.coins-message{
+    color: black;
+    font-weight: 900;
+    font-size: 2rem;
+}

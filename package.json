@@ -1,0 +1,28 @@
+{
+  "name": "version_new",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "@lottiefiles/react-lottie-player": "^3.6.0",
+    "firebase": "^11.2.0",
+    "gsap": "^3.12.7",
+    "lottie-web": "^5.12.2",
+    "next": "15.1.5",
+    "react": "^19.0.0",
+    "react-confetti": "^6.2.2",
+    "react-dom": "^19.0.0",
+    "react-hot-toast": "^2.5.1",
+    "react-lazy-load-image-component": "^1.6.3",
+    "react-spinners": "^0.15.0",
+    "react-use": "^17.6.0",
+    "socket.io-client": "^4.8.1"
+  }
+}

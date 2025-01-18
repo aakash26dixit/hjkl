@@ -1,0 +1,62 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background: black;
+    min-height: 100vh;
+    text-align: center;
+  }
+  
+  .heading {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  .logCards {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .logCard {
+    background: rgba(255, 255, 255, 0.1); /* Translucent background */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
+    color: #fff;
+  }
+  
+  .logItem {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+  }
+  
+  .label {
+    font-weight: bold;
+  }
+  
+  .profit {
+    color: #4caf50; /* Green for profit */
+  }
+  
+  .loss {
+    color: #f44336; /* Red for loss */
+  }
+  
+  .noData {
+    text-align: center;
+    color: #888;
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  

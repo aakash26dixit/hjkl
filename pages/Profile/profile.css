@@ -1,0 +1,70 @@
+.profileContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000; /* Black background */
+}
+
+.profileCard {
+    background: rgba(255, 255, 255, 0.1); /* Light background with transparency */
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Shadow to create floating effect */
+    padding: 30px;
+    width: 100%;
+    max-width: 380px;
+    color: white; /* White text color for contrast */
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+}
+
+.profileHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.profileImage {
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.profileTitle {
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.profileDetails {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.infoRow {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #ddd; /* Light gray text for readability */
+}
+
+.infoLabel {
+    font-weight: bold;
+    color: #fff;
+}
+
+.infoValue {
+    font-weight: normal;
+}
+
+@media (max-width: 768px) {
+    .profileCard {
+        padding: 20px;
+    }
+
+    .profileTitle {
+        font-size: 24px;
+    }
+}

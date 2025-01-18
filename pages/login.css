@@ -1,0 +1,321 @@
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #000;
+}
+
+
+
+.navbar-brand {
+    color: white;
+    font-size: 24px;
+}
+
+.navbar-links {
+    display: flex;
+}
+
+.navbar-links a {
+    /* color: #000; */
+    color: white;
+    padding: 0 15px;
+    text-decoration: none;
+}
+
+.navbar-toggle {
+    display: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    /* Hidden off-screen initially */
+    height: 100%;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.8);
+    font-size: 4vh;
+    line-height: 1.6;
+    padding-top: 60px;
+    font-family: 'Roboto', sans-serif;
+    transition: left 0.3s ease;
+    z-index: 10;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    padding: 15px;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    background-color: #575757;
+}
+
+@media (max-width: 768px) {
+    .navbar-links {
+        display: none;
+    }
+
+    .navbar-toggle {
+        display: block;
+        transition: .3s ease;
+    }
+}
+
+.sidebar a:hover::before {
+    transform: translateY(-50%);
+}
+
+.sidebar a:hover::after {
+    transform: translateY(50%);
+}
+
+.container {
+    background-color: #000;
+    height: 100vh;
+    /* Full height of the viewport */
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.top-image {
+    height: 10rem;
+    margin-top: 7vh;
+    /* border: 2px solid red; */
+}
+
+.top-image {
+    height: 10%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Make the image fill the container */
+}
+
+button{
+    margin: 10px;
+    height: 2.5rem;
+    width: 80%;
+    color: white;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.contact-us{
+    color: white;
+    margin-bottom: 0;
+}
+
+.contact-us-message{
+    margin-top: 0;
+    color: white;
+    font-weight: 100;
+}
+
+.image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form {
+    /* position: absolute; */
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+    border-radius: 15px;
+    padding: 20px;
+    width: 70%;
+}
+
+.glass-pieces {
+    position: absolute;
+    height: 2rem;
+    width: 2rem;
+    top: 20%;
+    right: 10%;
+    height: 6rem;
+    width: 6rem;
+    border-radius: 20%;
+    background-color: transparent;
+    display: flex;
+    flex-wrap: wrap;
+    /* border: 2px solid yellow; */
+}
+
+.glass-piece-1 {
+    position: relative;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 2px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    height: 3px;
+    width: 3px;
+    animation: example1 5s linear 2s infinite alternate;
+}
+
+.glass-piece-2 {
+    position: relative;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 2px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    height: .5px;
+    width: .5px;
+    animation: example2 5s linear 2s infinite alternate;
+}
+
+.glass-piece-3 {
+    position: relative;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 2px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    height: .9px;
+    width: .9px;
+    animation: example3 5s linear 2s infinite alternate;
+}
+
+.glass-piece-4 {
+    position: relative;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 2px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    height: 1px;
+    width: 1px;
+    animation: example4 5s linear 2s infinite alternate;
+}
+
+.login-title{
+    display: flex;
+    justify-content: space-between;
+}
+
+.unlock-lottie{
+    margin-top: 5px;
+}
+
+input{
+    color: white;
+    padding-left: 10px;
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+    width: 100%;
+    margin-top: 10px;
+    /* box-sizing: border-box; */
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+    height: 2rem;
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+input[type="text"]:focus {
+    border: none;
+}
+
+@keyframes example1 {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    /* Move up by 8px */
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes example2 {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+    /* Move up by 12px */
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes example3 {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+
+    /* Move up by 6px */
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes example4 {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    /* Move up by 10px */
+    100% {
+        transform: translateY(0);
+    }
+}

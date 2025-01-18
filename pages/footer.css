@@ -1,0 +1,33 @@
+.footer{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.footer .footer-container{
+    display: flex;padding: 2rem;
+    justify-content: space-between;
+}
+
+.footer .footer-container .links ul li a{
+    color: white;
+    list-style-type: none;
+}
+
+.footer .footer-container .links ul{
+    list-style-type: none;
+}
+
+.footer-container{
+    display: flex;
+}
+
+.footer-container .social .social-links{
+    display: flex;
+    flex-direction: column;
+} 
+
+.footer-container .social .social-links .social-icon{
+    color: white;
+}
