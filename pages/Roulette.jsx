@@ -1625,19 +1625,19 @@ const Roulette = () => {
     }, []);
 
     useEffect(() => {
+        if (typeof window !== 'undefined') { // Check if window object is available (client-side only)
+            const checkAuth = () => {
+                const userLoggedIn = isAuthenticated(); // Check if user is logged in
+                if (!userLoggedIn) {
+                    router.replace('/Login'); // Redirect if not authenticated
+                } else {
+                    setIsAuthChecked(true); // Allow rendering if authenticated
+                }
+            };
 
-        const checkAuth = () => {
-            const userLoggedIn = isAuthenticated(); // Check if user is logged in
-            if (!userLoggedIn) {
-                router.replace('/Login'); // Redirect if not authenticated
-            } else {
-                setIsAuthChecked(true); // Allow rendering if authenticated
-            }
-        };
-
-
-        checkAuth();
-    }, [router], []);
+            checkAuth();
+        }
+    }, [router]);
 
 
     useEffect(() => {
@@ -8116,6 +8116,20 @@ const Roulette = () => {
 
     }
 
+    const handleNavigation = (path) => {
+        if (typeof window !== 'undefined') {
+            router.push({ pathname: path });
+        }
+    };
+
+
+    const handleLogout = () => {
+        if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
+            localStorage.clear();
+            router.push({ pathname: '/' });
+        }
+    };
+
     const triggerConfetti = () => {
         // Abruptly set the confetti count to max
         setConfettiCount(200);
@@ -8182,35 +8196,11 @@ const Roulette = () => {
                 <div className={styles.menu_class} ref={menuRef}>
                     <div className={styles.menu_items} >
                         <ol ref={hideLinksRef}>
-                            <li onClick={() => router.push({
-                                pathname: '/BetHistory/BetHistory',
-                            })}>Bet History</li>
-                            <li onClick={() => router.push({
-                                pathname: '/TransactionHistory/TransactionHistory',
-                            })} >Transaction History</li>
-                            <li onClick={() => router.push('/depositWithdraw')} >Deposit/Withdrawal</li>
-                            {/* <li onClick={() => { setChangePassword(!changePassword) }} >
-                                Change Password
-                            </li> */}
-                            {/* <li>Rules</li> */}
-                            <li onClick={() => {
-                                // localStorage.clear();
-                                if (typeof window !== 'undefined' && typeof localStorage !== 'undefined' && typeof window !== 'undefined') {
-                                    router.push({
-                                        pathname: './Profile/Profile',
-                                    })
-                                }
-                               
-                            }}>My Profile</li>
-                            <li onClick={() => {
-                                if (typeof window !== 'undefined' && typeof localStorage !== 'undefined' && typeof window !== 'undefined') {
-                                    localStorage.clear();
-                                    router.push({
-                                        pathname: '/',
-                                    })
-                                }
-
-                            }}>Logout</li>
+                            <li onClick={() => handleNavigation('/BetHistory/BetHistory')}>Bet History</li>
+                            <li onClick={() => handleNavigation('/TransactionHistory/TransactionHistory')}>Transaction History</li>
+                            <li onClick={() => handleNavigation('/depositWithdraw')}>Deposit/Withdrawal</li>
+                            <li onClick={() => handleNavigation('/Profile/Profile')}>My Profile</li>
+                            <li onClick={handleLogout}>Logout</li>
                         </ol>
                     </div>
 
